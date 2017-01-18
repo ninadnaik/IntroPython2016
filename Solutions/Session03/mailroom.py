@@ -146,14 +146,19 @@ def print_donor_report():
         print("{:25s}   {:11.2f}   {:9d}   {:12.2f}".format(*row))
 
 if __name__ == "__main__":
+    print ('''Please choose from the below menu items.
+        To send a Thank You note, enter T
+        To create a report, enter R
+        To exit, enter Q\n''')
     running = True
     while running:
         selection = main_menu_selection()
-        if selection == "t":
+        if selection == "t" or selection =="T":
             send_thank_you()
-        elif selection == "r":
+        elif selection == "r" or selection == "R":
             print_donor_report()
-        elif selection == "q":
+        elif selection == "q" or selection == "Q":
             running = False
         else:
-            print("error: menu selection is invalid!")
+            print("Error: Your selection is invalid. Please enter a valid input.")
+
